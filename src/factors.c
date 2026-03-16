@@ -7,7 +7,10 @@
 #include "matrix.h"
 #include "vector.h"
 
-void lac_factorsPrintLU(Matrix *A)
+static void lac__internal_factorizeLU(Matrix *const A, const uint32_t k);
+
+
+void lac_factorsPrintLU(const Matrix *const A)
 {
     if(!(A->L && A->U))
         return;
@@ -15,7 +18,21 @@ void lac_factorsPrintLU(Matrix *A)
     lac_matrixPrint(A->L); puts(""); lac_matrixPrint(A->U);
 }
 
-void lac_factorizeLU(Matrix *A, uint32_t k)
+
+void lac_factorizeLU(Matrix *const A)
+{
+    if (!lac_matrixIsSquare(A))
+    {
+        fprintf(stderr, "%s", "factorizeLU does not support non-square matrices.\n");
+        return;
+    }
+
+    lac__internal_factorizeLU(A, A->m);
+    
+}
+
+
+static void lac__internal_factorizeLU(Matrix *const A, const uint32_t k)
 {
     A->L = lac_matrixAlloc(k, k);
     A->U = lac_matrixAlloc(k, k);
@@ -51,7 +68,7 @@ void lac_factorizeLU(Matrix *A, uint32_t k)
 
     lac_matrixFree(&D);
 
-    lac_factorizeLU(Asub, k-1);
+    lac__internal_factorizeLU(Asub, k-1);
 
     lac_matrixSet(A->L, 1, 1, 1);
     for (size_t i = 1; i <= k-1; i++)

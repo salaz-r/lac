@@ -1,0 +1,242 @@
+[
+  {
+    "file": "main.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-c",
+      "-o",
+      "build/obj/./main.o",
+      "main.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/obj/./main.o"
+  },
+  {
+    "file": "src/factors.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-c",
+      "-o",
+      "build/obj/src/factors.o",
+      "src/factors.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/obj/src/factors.o"
+  },
+  {
+    "file": "src/helpers.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-c",
+      "-o",
+      "build/obj/src/helpers.o",
+      "src/helpers.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/obj/src/helpers.o"
+  },
+  {
+    "file": "src/mathops.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-c",
+      "-o",
+      "build/obj/src/mathops.o",
+      "src/mathops.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/obj/src/mathops.o"
+  },
+  {
+    "file": "src/matrix.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-c",
+      "-o",
+      "build/obj/src/matrix.o",
+      "src/matrix.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/obj/src/matrix.o"
+  },
+  {
+    "file": "src/vector.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-c",
+      "-o",
+      "build/obj/src/vector.o",
+      "src/vector.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/obj/src/vector.o"
+  },
+  {
+    "file": "main.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-S",
+      "-o",
+      "build/asm/./main.s",
+      "main.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/asm/./main.s"
+  },
+  {
+    "file": "src/factors.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-S",
+      "-o",
+      "build/asm/src/factors.s",
+      "src/factors.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/asm/src/factors.s"
+  },
+  {
+    "file": "src/helpers.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-S",
+      "-o",
+      "build/asm/src/helpers.s",
+      "src/helpers.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/asm/src/helpers.s"
+  },
+  {
+    "file": "src/mathops.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-S",
+      "-o",
+      "build/asm/src/mathops.s",
+      "src/mathops.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/asm/src/mathops.s"
+  },
+  {
+    "file": "src/matrix.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-S",
+      "-o",
+      "build/asm/src/matrix.s",
+      "src/matrix.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/asm/src/matrix.s"
+  },
+  {
+    "file": "src/vector.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "-Wextra",
+      "-I.",
+      "-I./include/",
+      "-O0",
+      "-std=c23",
+      "-MP",
+      "-MD",
+      "-S",
+      "-o",
+      "build/asm/src/vector.s",
+      "src/vector.c"
+    ],
+    "directory": "/home/Salazar/Projects/lac",
+    "output": "build/asm/src/vector.s"
+  }
+]

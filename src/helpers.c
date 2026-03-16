@@ -4,8 +4,8 @@
 #include <stdlib.h>
 
 
-void lac_complain(char *functionName)
+void lac__internal_complain(const char *const functionName)
 {
     fprintf(stderr, "malloc failure in %s\n", functionName);
-    EXIT_FAILURE;
+    exit(EXIT_FAILURE);
 }

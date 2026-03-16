@@ -1,16 +1,17 @@
 #include "matrix.h"
 
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "helpers.h"
 
 
-Matrix *lac_matrixAlloc(uint32_t m, uint32_t n)
+Matrix *lac_matrixAlloc(const uint32_t m, const uint32_t n)
 {
     Matrix *A = (Matrix*) malloc(sizeof(Matrix));
     if (!A)
-        lac_complain("lac_matrixAlloc");
+        lac__internal_complain("lac_matrixAlloc");
 
     A->m = m; //column size
     A->n = n; //row size
@@ -24,7 +25,7 @@ Matrix *lac_matrixAlloc(uint32_t m, uint32_t n)
 
     A->vals = (float*) malloc(m*n*sizeof(float));
     if (!A->vals)
-        lac_complain("lac_matrixAlloc");
+        lac__internal_complain("lac_matrixAlloc");
 
     for (size_t j = 0; j < m; j++)
         for (size_t i = 0; i < n; i++)
@@ -34,7 +35,7 @@ Matrix *lac_matrixAlloc(uint32_t m, uint32_t n)
 }
 
 
-void lac_matrixFree(Matrix **A)
+void lac_matrixFree(Matrix **const A)
 {
     if(!A || !*A)
         return;
@@ -58,7 +59,7 @@ void lac_matrixFree(Matrix **A)
 }
 
 
-void lac_matrixSet(Matrix *A, uint32_t i, uint32_t j, float val)
+void lac_matrixSet(Matrix *const A, const uint32_t i, const uint32_t j, const float val)
 {
     if (i < 1 || i > A->m || j < 1 || j > A->n)
     {
@@ -70,7 +71,7 @@ void lac_matrixSet(Matrix *A, uint32_t i, uint32_t j, float val)
 }
 
 
-float lac_matrixGet(Matrix *A, uint32_t i, uint32_t j)
+float lac_matrixGet(const Matrix *const A, const uint32_t i, const uint32_t j)
 {
         if (i < 1 || i > A->m || j < 1 || j > A->n)
     {
@@ -82,7 +83,7 @@ float lac_matrixGet(Matrix *A, uint32_t i, uint32_t j)
 }
 
 
-void lac_matrixPrint(Matrix *A)
+void lac_matrixPrint(const Matrix *const A)
 {
     for (size_t i = 1; i <= A->m; i++)
     {
@@ -96,7 +97,7 @@ void lac_matrixPrint(Matrix *A)
 }
 
 
-void lac_matrixFillRandFloat(Matrix *A, float lowerBound, float upperBound)
+void lac_matrixFillRandFloat(Matrix *const A, const float lowerBound, const float upperBound)
 {
     for (size_t i = 0; i < A->m; i++)
         for (size_t j = 0; j < A->n; j++)
@@ -108,7 +109,7 @@ void lac_matrixFillRandFloat(Matrix *A, float lowerBound, float upperBound)
 }
 
 
-int lac_matrixIsSquare(Matrix *A)
+int lac_matrixIsSquare(const Matrix *const A)
 {
     return A->m == A->n;
 }

@@ -1,27 +1,29 @@
 #include "vector.h"
 
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "helpers.h"
 
 
-Vector *lac_vectorAlloc(uint32_t n)
+Vector *lac_vectorAlloc(const uint32_t n)
 {
     Vector *v = (Vector*) malloc(sizeof(Vector));
     if (!v)
-        lac_complain("lac_vectorAlloc()");
+        lac__internal_complain("lac_vectorAlloc()");
 
     v->n = n;
 
     v->vals = (float*) malloc(n*sizeof(float));
     if (!v->vals)
-        lac_complain("lac_vectorAlloc()");
+        lac__internal_complain("lac_vectorAlloc()");
 
     return v;
 }
 
-void lac_vectorFree(Vector **v)
+
+void lac_vectorFree(Vector **const v)
 {
     if (!v || !*v)
         return;
@@ -32,7 +34,8 @@ void lac_vectorFree(Vector **v)
     *v = NULL;
 }
 
-void lac_vectorSet(Vector *v, uint32_t i, float val)
+
+void lac_vectorSet(Vector *const v, const uint32_t i, const float val)
 {
     if (i < 1 || i > v->n)
     {
@@ -43,7 +46,8 @@ void lac_vectorSet(Vector *v, uint32_t i, float val)
     v->vals[i-1] = val;
 }
 
-float lac_vectorGet(Vector *v, uint32_t i)
+
+float lac_vectorGet(const Vector *const v, const uint32_t i)
 {
     if (i < 1 || i > v->n)
     {
@@ -54,7 +58,8 @@ float lac_vectorGet(Vector *v, uint32_t i)
     return v->vals[i-1];
 }
 
-void lac_vectorPrint(Vector *v)
+
+void lac_vectorPrint(const Vector *const v)
 {
     for (size_t i = 1; i <= v->n; i++)
         printf("%.2f; ", v->vals[i-1]);

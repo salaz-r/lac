@@ -4,11 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "matrix.h"
-#include "vector.h"
 
-
-float lac_sInv(float x)
+float lac_sInv(const float x)
 {
     if (!x)
     {
@@ -19,7 +16,8 @@ float lac_sInv(float x)
     return 1/x;
 }
 
-float lac_inner(Vector *ut, Vector *v)
+
+float lac_inner(const Vector *const ut, const Vector *const v)
 {
     if (ut->n != v->n)
     {
@@ -34,7 +32,8 @@ float lac_inner(Vector *ut, Vector *v)
     return sum;
 }
 
-Matrix *lac_outer(Vector *u, Vector *vt)
+
+Matrix *lac_outer(const Vector *const u, const Vector *const vt)
 {
     Matrix *A = lac_matrixAlloc(u->n, vt->n);
     for (size_t j = 0; j < A->n; j++)
