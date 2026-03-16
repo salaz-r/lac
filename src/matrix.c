@@ -101,7 +101,7 @@ void lac_matrixFillRandFloat(Matrix *A, float lowerBound, float upperBound)
     for (size_t i = 0; i < A->m; i++)
         for (size_t j = 0; j < A->n; j++)
         {
-            A->vals[A->m*(j-1)+(i-1)] = 67;
+            A->vals[A->m*(j-1)+(i-1)] = upperBound-lowerBound;
         }
 
     //INDEV
