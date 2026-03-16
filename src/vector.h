@@ -10,6 +10,13 @@ typedef struct Vector
 
 } Vector;
 
+/**
+ * \brief Allocates a vector of size n.
+ *
+ * \param n Number of elements.
+ * \return Pointer to the allocated vector.
+ */
+Vector *lac_vectorAlloc(uint32_t n);
 Vector *lac_vectorAlloc(uint32_t n);
 
 void lac_vectorFree(Vector **v);
